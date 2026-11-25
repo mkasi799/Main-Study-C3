@@ -449,7 +449,7 @@ function startStudy() {
                         class="icon"
                         alt="Participants">
 
-                    <span>Participants (5)</span>
+                    <span id="participantCount">Participants (2)</span>
 
                 </div>
 
@@ -539,12 +539,21 @@ function startStudy() {
 
     /* =========================
        VIDEO TILE VISIBILITY
+       AND PARTICIPANT COUNT
     ========================= */
 
 
     // C3_P2 appears at 8 seconds.
+    // Participant count increases to 3.
 
     setTimeout(() => {
+
+        const participantCount =
+            document.getElementById("participantCount");
+
+        if (participantCount) {
+            participantCount.innerText = "Participants (3)";
+        }
 
         if (bottomLeftBox) {
             bottomLeftBox.style.visibility = "visible";
@@ -558,8 +567,16 @@ function startStudy() {
 
 
     // C3_P1 appears at 15 seconds.
+    // Participant count increases to 4.
 
     setTimeout(() => {
+
+        const participantCount =
+            document.getElementById("participantCount");
+
+        if (participantCount) {
+            participantCount.innerText = "Participants (4)";
+        }
 
         if (upperLeftBox) {
             upperLeftBox.style.visibility = "visible";
@@ -797,3 +814,4 @@ function renderMeetingCompletePage() {
 ========================= */
 
 renderIntro();
+
